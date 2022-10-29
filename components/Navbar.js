@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import { FiGithub } from "react-icons/fi";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { FaSearch } from "react-icons/fa";
 import SearchPhotos from "./SearchPhotos";
+import Tags from "./Tags";
 
 function Navbar(props) {
-  const [searchbar, setSearchbar] = useState(1);
+  const [searchbar, setSearchbar] = useState(0);
 
   return (
     <div className="sticky top-0 w-full z-20 backdrop-blur-lg bg-white text-black">
@@ -14,7 +15,8 @@ function Navbar(props) {
         <Link href="/">
           <h2 className="text-2xl ">Sunsine</h2>
         </Link>
-        <ul className="gap-6 lg:gap-10 items-center  hidden md:flex">
+
+        <ul className="gap-6 lg:gap-7 items-center  hidden md:flex">
           <li>
             <Link href="/">Home</Link>
           </li>
@@ -39,6 +41,14 @@ function Navbar(props) {
               Search photos <FaSearch />
             </button>
           </li>
+          <li>
+            <Link
+              href="https://github.com/0me9a"
+              className="border-2 inline-block p-1 rounded-full  border-black hover:bg-black group"
+            >
+              <FiGithub className="text-xl group-hover:text-white" />
+            </Link>
+          </li>
         </ul>
         <div className="flex items-center gap-5 md:hidden">
           <button
@@ -48,9 +58,10 @@ function Navbar(props) {
             }
             className="p-2 bg-black text-white px-3 w-24 flex items-center justify-between rounded-full border-2 border-blue-800 text-sm"
           >
-          Search
-          <FaSearch />
+            Search
+            <FaSearch />
           </button>
+
           <HiOutlineMenuAlt3
             className=" text-2xl"
             onClick={() =>
@@ -63,7 +74,8 @@ function Navbar(props) {
       </nav>
       <SearchPhotos searchbar={searchbar} />
 
-      <hr className="w-full relative z-10 border-blue-800" />
+      {/* <Tags/> */}
+      {/* <hr className="w-full relative z-10 border-blue-800" /> */}
     </div>
   );
 }

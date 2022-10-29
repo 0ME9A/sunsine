@@ -1,16 +1,15 @@
 import React from 'react';
 import Content from '../components/Content';
 import Footer from '../components/Footer';
-import Navbar from '../components/Navbar';
+import Header from '../components/Header';
+import Layout from '../components/Layout';
 
 function photos(props) {
     return (
-        <>
-            <Navbar/>
-            <div className='p-5'></div>
+        <Layout>
             <Content/>
-            <Footer/>
-        </>
+        </Layout>
+
     );
 }
 

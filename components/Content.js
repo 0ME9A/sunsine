@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import Cards from "./Cards";
 import Loading from "./Loading";
+import {ImCloudDownload} from 'react-icons/im'
 
 function Content(props) {
   const [image, setImages] = useState("");
@@ -33,14 +34,13 @@ function Content(props) {
 
 
   if (fetchStatus === 200) {
-    return <div className="w-full flex flex-col items-center gap-5 md:gap-10">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 max-w-screen-2xl mx-auto">
+    return <div className="w-full flex flex-col items-center gap-5 md:gap-10 mt-5">
+      <div className="grid grid-cols-1 w-full sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5 max-w-screen-2xl mx-auto">
         {image.map((item) => {
-          // return <Cards img={item.urls.regular} id={item.id} key={item.id} />;
           return <Cards allData={item} key={item.id} />;
         })}
       </div>
-      <button onClick={() => fetchData()} className="p-3 px-5 hover:shadow-lg">Load More</button>
+      <button onClick={() => fetchData()} className="p-3 px-5 border-b-2 border-transparent hover:border-blue-800 flex items-center gap-2">Load More <ImCloudDownload className="text-lg"/></button>
     </div>
   } else {
     return <Loading />;

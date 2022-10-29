@@ -1,9 +1,15 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { FaSearch } from 'react-icons/fa';
+import { HiScale } from 'react-icons/hi';
 
 function SearchPhotos(props) {
+    const searchState = useRef(0)
+
+    searchState.current = props.searchbar
+
+
     return (
-        <form action="#" method="get" className={`fixed w-full p-5 origin-top scale-` + props.searchbar}>
+        <form action="#" method="get" className={`fixed w-full p-5 origin-top`} style={{transform: `scale(${props.searchbar})`}}>
             <div className="max-w-screen-lg mx-auto flex rounded-xl overflow-hidden hover:shadow-xl">
                 <label htmlFor="search" className="hidden">search</label>
                 <input type="search" name="search" id="search" placeholder="Search photos" className="p-5 text-xl px-8 w-full rounded-tl-xl rounded-bl-xl outline-none" />

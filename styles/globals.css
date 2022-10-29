@@ -5,6 +5,8 @@
 @layer base{
     *{
         transition: .3s;
+        font-family: 'Rubik', sans-serif;
+
     }
     body{
         @apply bg-[#ecf0f3] text-[#1f2937] tracking-wide
