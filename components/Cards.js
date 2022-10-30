@@ -2,7 +2,6 @@ import React from "react";
 import Image from "next/image";
 
 function Cards(props) {
-  // const Data = [...props.allData]
   const img = props.allData.urls.regular;
   const id = props.allData.id;
   const userName = props.allData.user.name;
@@ -11,6 +10,7 @@ function Cards(props) {
     <div
       className="group w-full h-auto bg-slate-800 aspect-video relative overflow-hidden"
       id={id}
+      onClick = {()=>props.setPhotoId(props.allData)}
     >
       <Image
         src={img}
