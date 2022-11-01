@@ -5,7 +5,7 @@ import Menu from "./Menu";
 import Tags from "./Tags";
 
 function Header(props) {
-  const [menuToggle, setMenuToggle] = useState(0)
+  const [menuToggle, setMenuToggle] = useState(0);
 
   return (
     <>

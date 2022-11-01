@@ -6,7 +6,9 @@
     *{
         transition: .3s;
         font-family: 'Rubik', sans-serif;
-
+    }
+    ::-webkit-scrollbar{
+        display: none;
     }
     body{
         @apply bg-[#ecf0f3] text-[#1f2937] tracking-wide
@@ -26,4 +28,5 @@
     /* button{
         @apply shadow-xl shadow-gray-400 rounded-lg uppercase bg-gradient-to-r from-[#5651e5] to-[#789dff] text-white
     } */
+    
 }

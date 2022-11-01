@@ -1,14 +1,10 @@
-import Head from "next/head";
-import Content from "../components/Content";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
 import Image from "next/image";
 import Layout from "../components/Layout";
-import SearchPhotos from "../components/SearchPhotos";
+import PhotosList from "../components/PhotosList";
 
 export default function Home({ result }) {
   return (
-    <Layout>
+    <>
       <div className="h-96 lg:h-[60vh] w-full bg-black overflow-hidden relative top-0">
         <Image
           alt="The guitarist in the concert."
@@ -23,10 +19,9 @@ export default function Home({ result }) {
             The internet’s source for visuals. Powered by creators everywhere.
           </p>
           <hr />
-          {/* <SearchPhotos/> */}
         </article>
       </div>
-      <Content />
-    </Layout>
+      <PhotosList />
+    </>
   );
 }

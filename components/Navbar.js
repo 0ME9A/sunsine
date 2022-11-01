@@ -10,8 +10,8 @@ function Navbar(props) {
   const [searchbar, setSearchbar] = useState(0);
 
   return (
-    <div className="sticky top-0 w-full z-20 backdrop-blur-lg bg-white text-black">
-      <nav className=" flex justify-between p-5 items-center max-w-screen-2xl mx-auto">
+    <div className="sticky top-0 w-full z-30 backdrop-blur-lg bg-white text-black">
+      <nav className=" flex justify-between p-5 px-3 items-center max-w-screen-2xl mx-auto">
         <Link href="/">
           <h2 className="text-2xl ">Sunsine</h2>
         </Link>
@@ -44,7 +44,7 @@ function Navbar(props) {
           <li>
             <Link
               href="https://github.com/0me9a"
-              className="border-2 inline-block p-1 rounded-full  border-black hover:bg-black group"
+              className="border-2 inline-block p-1 rounded-full border-black hover:bg-black group"
             >
               <FiGithub className="text-xl group-hover:text-white" />
             </Link>

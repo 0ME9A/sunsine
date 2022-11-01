@@ -1,16 +1,11 @@
-import React from 'react';
-import Content from '../components/Content';
-import Footer from '../components/Footer';
-import Header from '../components/Header';
-import Layout from '../components/Layout';
+import React from "react";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
+import Layout from "../components/Layout";
+import PhotosList from "../components/PhotosList";
 
 function photos(props) {
-    return (
-        <Layout>
-            <Content/>
-        </Layout>
-
-    );
+  return <PhotosList />;
 }
 
 export default photos;
