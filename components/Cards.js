@@ -14,24 +14,30 @@ function Cards(props) {
   const bgColor = props.imageData.color;
   const downloadUrls = props.imageData.links.download;
   return (
-    <div
-      className={`group w-full h-auto aspect-video relative overflow-hidden bg-blue-800`}
-      id={id}
-      style={{ background: bgColor }}
-    >
-      <Image
-        src={img}
-        alt={id + "img"}
-        fill
-        className="w-full h-auto object-cover"
-        sizes="(max-width: 768px) 100vw,
+    <div className={`group w-full h-auto relative hover:bg-black/10`} id={id}>
+      <div
+        className="w-full h-auto relative cursor-zoom-in"
+        style={{ background: bgColor }}
+        onClick={() => {
+          context.setIsPreviewActive(props.imageData);
+        }}
+      >
+        <Image
+          src={img}
+          alt={id + "img"}
+          // fill
+          width={500}
+          height={500}
+          className="w-full h-auto object-cover"
+          sizes="(max-width: 768px) 100vw,
         (max-width: 1200px) 50vw,
         33vw"
-      />
+        />
+      </div>
 
-      <article className="w-full h-full flex flex-col justify-between bg-black/75 absolute top-0 left-0 opacity-0 hover:opacity-100">
+      <article className="w-full sm:h-full flex flex-col justify-between sm:opacity-0 pb-5 sm:p-0 sm:absolute top-0 left-0 hover:opacity-100 sm:card">
         <div
-          className="w-full h-full"
+          className="w-full h-full cursor-zoom-in"
           onClick={() => {
             context.setIsPreviewActive(props.imageData);
           }}
@@ -41,14 +47,14 @@ function Cards(props) {
             img={userImg}
             userName={userName}
             userId={userId}
-            textColor={"white"}
+            styles={"sm:text-white"}
           />
           <a
             href={downloadUrls + "&force=true"}
             download
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-end border-2 aspect-square text-xl flex items-center justify-center rounded-md hover:bg-white hover:text-black text-white px-2"
+            className="flex-end border-2 aspect-square text-xl flex items-center justify-center rounded-md hover:bg-white bg-black hover:text-black text-white px-2"
             onClick={() => {
               context.setIsDownloadActive(props.imageData);
             }}

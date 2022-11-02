@@ -4,7 +4,7 @@ import Image from "next/image";
 function UserProfileThumbnail(props) {
   return (
     <figure
-      className={`flex items-center gap-3 text-${props.textColor} relative cursor-pointer bg-transparent`}
+      className={`flex items-center gap-3 ${props.styles} relative cursor-pointer bg-transparent`}
     >
       <Image
         src={props.img}

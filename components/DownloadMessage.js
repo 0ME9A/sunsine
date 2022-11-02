@@ -9,7 +9,6 @@ function DownloadMessage(props) {
   const userName = imageData.user.name;
   const img = imageData.urls.small;
   const [fadeOut, setFadeOut] = useState(1)
-    console.log(context)
   // useEffect(()=>{
   //   setTimeout(() => {
   //     setFadeOut(.2)

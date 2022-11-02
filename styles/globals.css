@@ -28,5 +28,7 @@
     /* button{
         @apply shadow-xl shadow-gray-400 rounded-lg uppercase bg-gradient-to-r from-[#5651e5] to-[#789dff] text-white
     } */
-    
+    .card{
+        background-image: radial-gradient(rgb(0, 0, 0, .4), rgb(0, 0, 0, .8))
+    }
 }

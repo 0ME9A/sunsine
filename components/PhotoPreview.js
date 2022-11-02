@@ -22,7 +22,6 @@ function PhotoPreview(props) {
 
   const [downloadLink, setDownloadLink] = useState(0);
 
-  console.log(imageData);
   document.addEventListener("click", function (e) {
     e.target.id === "download-arrow" || e.target.id === "download-arrow-2"
       ? setDownloadLink(1)
