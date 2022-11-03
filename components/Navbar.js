@@ -13,16 +13,16 @@ function Navbar(props) {
     <div className="sticky top-0 w-full z-30 backdrop-blur-lg bg-white text-black">
       <nav className=" flex justify-between p-5 px-3 items-center max-w-screen-2xl mx-auto">
         <Link href="/">
-          <h2 className="text-2xl ">Sunsine</h2>
+          <h2 className="text-2xl ">camCapture</h2>
         </Link>
 
         <ul className="gap-6 lg:gap-7 items-center  hidden md:flex">
           <li>
             <Link href="/">Home</Link>
           </li>
-          <li>
+          {/* <li>
             <Link href="/photos">Photos</Link>
-          </li>
+          </li> */}
           <li>
             <Link href="/">About</Link>
           </li>

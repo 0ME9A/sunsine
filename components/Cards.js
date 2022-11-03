@@ -13,6 +13,7 @@ function Cards(props) {
   const userImg = props.imageData.user.profile_image.small;
   const bgColor = props.imageData.color;
   const downloadUrls = props.imageData.links.download;
+  const alt_description = props.imageData.alt_description
   return (
     <div className={`group w-full h-auto relative hover:bg-black/10`} id={id}>
       <div
@@ -23,8 +24,8 @@ function Cards(props) {
         }}
       >
         <Image
+          alt={alt_description===null?"Photo by"+userName:alt_description}
           src={img}
-          alt={id + "img"}
           // fill
           width={500}
           height={500}

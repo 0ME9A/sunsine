@@ -1,13 +1,12 @@
 import React, { useRef } from "react";
 import { FaSearch } from "react-icons/fa";
-import { HiScale } from "react-icons/hi";
 
 function SearchPhotos(props) {
   const searchState = useRef(0);
   searchState.current = props.searchbar;
   return (
     <form
-      action="#"
+      action="/photos/"
       method="get"
       className={`fixed w-full p-3 origin-top`}
       style={{ transform: `scale(${props.searchbar})` }}
@@ -18,8 +17,9 @@ function SearchPhotos(props) {
         </label>
         <input
           type="search"
-          name="photos"
+          name="search"
           id="search"
+          autoFocus
           placeholder="Search photos"
           className="p-5 text-xl px-8 w-full rounded-tl-xl rounded-bl-xl outline-none"
         />

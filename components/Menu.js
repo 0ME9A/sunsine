@@ -38,9 +38,9 @@ function Menu(props) {
           <li>
             <Link href="/">Home</Link>
           </li>
-          <li>
+          {/* <li>
             <Link href="/photos">Photos</Link>
-          </li>
+          </li> */}
           <li>
             <Link href="/">About</Link>
           </li>

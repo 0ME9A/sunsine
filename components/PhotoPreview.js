@@ -3,8 +3,11 @@ import Image from "next/image";
 import { GrClose } from "react-icons/gr";
 import UserProfileThumbnail from "./UserProfileThumbnail";
 import { MdOutlineKeyboardArrowDown } from "react-icons/md";
-import Content from "./PhotosList";
+import PhotosList from "./PhotosList";
 import PhotosContext from "./Context/PhotosContext";
+import {SlCalender} from 'react-icons/sl'
+import {HiOutlineShieldCheck} from 'react-icons/hi';
+import {HiOutlineIdentification} from 'react-icons/hi'
 
 function PhotoPreview(props) {
   const context = useContext(PhotosContext);
@@ -19,6 +22,8 @@ function PhotoPreview(props) {
   const date = imageData.created_at;
   const bgColor = imageData.color;
   const downloadUrls = imageData.links.download;
+  const alt_description = imageData.alt_description;
+  const views = imageData.likes;
 
   const [downloadLink, setDownloadLink] = useState(0);
 
@@ -27,7 +32,6 @@ function PhotoPreview(props) {
       ? setDownloadLink(1)
       : setDownloadLink(0);
   });
-
   return (
     <section className="w-full top-20 h-screen fixed bg-black/75 z-20 overflow-auto">
       <div className="max-w-screen-2xl flex flex-col justify-center items-center h-auto border-2 mx-auto bg-white 2xl:top-5 relative">
@@ -47,7 +51,9 @@ function PhotoPreview(props) {
         <figure className="bg-white w-full grid items-center justify-center ">
           <Image
             src={img}
-            alt="Loading..."
+            alt={
+              alt_description === null ? "Photo by" + userName : alt_description
+            }
             width={size[0]}
             height={size[1]}
             className={`${
@@ -62,8 +68,22 @@ function PhotoPreview(props) {
             {userName}
           </figcaption>
         </figure>
-        <div className="flex justify-between w-full p-3 items-center relative">
-          <p className="font-light text-sm">Date: {date.split("T")[0]}</p>
+        <div className="flex justify-between w-full p-3 items-start relative">
+          <ul className="grid gap-2">
+            <li className="font-light text-sm flex items-center"><HiOutlineIdentification className="inline mr-3 text-lg"/> Photo id <span className="p-1 px-2 rounded-md bg-gray-100 shadow-lg ml-2">{id}</span></li>
+            <li className="font-light text-sm flex items-center"><SlCalender className="inline mr-3 text-lg"/> Published {date.split("T")[0]}</li>
+            <li className="font-light text-sm flex items-center"><HiOutlineShieldCheck className="inline mr-3 text-lg"/>
+              Free to use under the{" "}
+              <a
+                href="https://unsplash.com/license"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline px-1"
+              >
+                Unsplash License
+              </a>
+            </li>
+          </ul>
           <button
             id="download-btn"
             className="border-2 rounded-md  hover:shadow-md flex items-center overflow-hidden"
@@ -149,7 +169,7 @@ function PhotoPreview(props) {
             ""
           )}
         </div>
-        <Content />
+        <PhotosList byUser={imageData.user.username}/>
       </div>
     </section>
   );
