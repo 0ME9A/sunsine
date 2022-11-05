@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "./Navbar";
-import Image from "next/image";
 import Menu from "./Menu";
-import Tags from "./Tags";
 
 function Header(props) {
   const [menuToggle, setMenuToggle] = useState(0);

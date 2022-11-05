@@ -24,28 +24,28 @@ function Menu(props) {
 
   return (
     <menu
-      className={`w-full h-full fixed z-10 right-0 top-0 uppercase md:hidden
+      className={`w-full h-full fixed z-40 right-0 top-0 uppercase lg:hidden
       ${mBack === 1 ? " bg-black/70 block" : " hidden"}`}
     >
       <div
-        className={`w-full bg-blue-100 h-full p-5 md:w-[500px] float-right origin-right relative 
+        className={`w-full bg-white h-full p-5 pt-24 md:w-[500px] float-right origin-right relative 
              ${m === 1 ? " opacity-1 scale-x-1" : " opacity-0 scale-x-0"}`}
       >
         <p className="mt-20 py-3 text-black normal-case border-b-blue-800 border-b-2">
-          Let's build something legendry together.
+          The internet’s source for visuals. Powered by creators everywhere.
         </p>
         <ul className="flex flex-col gap-8 mt-16 text-black text-xl max-w-screen-2xl mx-auto">
           <li>
             <Link href="/">Home</Link>
           </li>
           {/* <li>
-            <Link href="/photos">Photos</Link>
+            <Link href="/creators/">Creators</Link>
           </li> */}
           <li>
             <Link href="/">About</Link>
           </li>
           <li>
-            <Link href="/">Contact</Link>
+            <Link href="/">Contact us</Link>
           </li>
         </ul>
         <div className="social absolute bottom-10">

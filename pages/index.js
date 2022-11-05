@@ -13,6 +13,7 @@ export default function Home({ result }) {
           layout="responsive"
           className="w-full h-full object-cover opacity-75"
         />
+        <div className="w-full h-full absolute card opacity-75"></div>
         <article className="absolute w-full p-5  md:max-w-3xl left-1/2 top-1/2 -translate-x-1/2">
           <h1 className="text-white">camCapture</h1>
           <p className="text-white">
@@ -21,7 +22,7 @@ export default function Home({ result }) {
           <hr />
         </article>
       </div>
-      <PhotosList />
+      <PhotosList title="false"/>
     </>
   );
 }

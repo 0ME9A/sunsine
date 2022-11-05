@@ -1,22 +1,22 @@
 import Head from "next/head";
 import React, { useEffect, useState } from "react";
-import Footer from "./Footer";
 import Header from "./Header";
 import PhotoPreview from "./PhotoPreview";
 import PhotosContext from "./Context/PhotosContext";
 import DownloadMessage from "./DownloadMessage";
+import ShareDialogbox from "./ShareDialogbox";
 
 function Layout({ children }) {
-  const [isPreviewActive, setIsPreviewActive] = useState("");
   const [isDownloadActive, setIsDownloadActive] = useState("");
+  const [isShareDialogboxActive, setIsShareDialogboxActive] = useState("");
 
   return (
     <PhotosContext.Provider
       value={{
-        isPreviewActive,
-        setIsPreviewActive,
         isDownloadActive,
         setIsDownloadActive,
+        isShareDialogboxActive,
+        setIsShareDialogboxActive,
       }}
     >
       <Head>
@@ -24,14 +24,13 @@ function Layout({ children }) {
       </Head>
 
       <Header />
-      {isPreviewActive !== "" && (
-        <PhotoPreview setIsPreviewActive={setIsPreviewActive} />
-      )}
       {isDownloadActive !== "" && (
-        <DownloadMessage setIsPreviewActive={setIsDownloadActive} />
+        <DownloadMessage setIsDownloadActive={setIsDownloadActive} />
+      )}
+      {isShareDialogboxActive !== "" && (
+        <ShareDialogbox setIsShareDialogboxActive={setIsShareDialogboxActive} />
       )}
       {children}
-      <Footer />
     </PhotosContext.Provider>
   );
 }

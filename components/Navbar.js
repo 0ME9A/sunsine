@@ -4,30 +4,29 @@ import { FiGithub } from "react-icons/fi";
 import { HiOutlineMenuAlt3 } from "react-icons/hi";
 import { FaSearch } from "react-icons/fa";
 import SearchPhotos from "./SearchPhotos";
-import Tags from "./Tags";
 
 function Navbar(props) {
   const [searchbar, setSearchbar] = useState(0);
 
   return (
-    <div className="sticky top-0 w-full z-30 backdrop-blur-lg bg-white text-black">
-      <nav className=" flex justify-between p-5 px-3 items-center max-w-screen-2xl mx-auto">
+    <div className="sticky top-0 w-full z-50 backdrop-blur-lg bg-white text-black">
+      <nav className=" flex justify-between p-3 items-center ">
         <Link href="/">
-          <h2 className="text-2xl ">camCapture</h2>
+          <h2 className="text-xl ">camCapture</h2>
         </Link>
 
-        <ul className="gap-6 lg:gap-7 items-center  hidden md:flex">
+        <ul className="gap-6 lg:gap-7 items-center  hidden lg:flex">
           <li>
             <Link href="/">Home</Link>
           </li>
           {/* <li>
-            <Link href="/photos">Photos</Link>
+            <Link href="/creators/">Creators</Link>
           </li> */}
           <li>
             <Link href="/">About</Link>
           </li>
           <li>
-            <Link href="/">Contact</Link>
+            <Link href="/">Contact us</Link>
           </li>
           <li className="h-5 w-[2px] bg-black"></li>
           <li>
@@ -50,13 +49,13 @@ function Navbar(props) {
             </Link>
           </li>
         </ul>
-        <div className="flex items-center gap-5 md:hidden">
+        <div className="flex items-center gap-5 lg:hidden">
           <button
             type="button"
             onClick={() =>
               searchbar === 0 ? setSearchbar(1) : setSearchbar(0)
             }
-            className="p-2 bg-black text-white px-3 w-24 flex items-center justify-between rounded-full border-2 border-blue-800 text-sm"
+            className="p-2 bg-black scale-75 lg:scale-100 text-white px-3 w-24 flex items-center justify-between rounded-full border-2 border-blue-800 text-sm"
           >
             Search
             <FaSearch />

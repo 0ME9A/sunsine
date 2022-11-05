@@ -20,14 +20,15 @@ function SearchPhotos(props) {
           name="search"
           id="search"
           autoFocus
-          placeholder="Search photos"
-          className="p-5 text-xl px-8 w-full rounded-tl-xl rounded-bl-xl outline-none"
+          placeholder="Search free high-resolution photos"
+          className="p-5 text-xl px-8 w-full rounded-tl-xl rounded-bl-xl outline-none placeholder:text-lg sm:placeholder:text-xl"
         />
         <button
           type="button"
-          className="px-8 text-xl bg-white text-black rounded-tr-xl hover:bg-black hover:text-white rounded-br-xl"
+          className="px-8 text-xl bg-white text-black  hover:bg-black hover:text-white"
         >
           <FaSearch />
+          {/* Search */}
         </button>
       </div>
     </form>

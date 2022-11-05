@@ -1,8 +1,8 @@
 import React from "react";
 import PhotosList from "../../components/PhotosList";
 
-function photos(props) {
-  return <PhotosList search={'omni'}/>;
+function Photos(props) {
+  return <PhotosList title={true}/>;
 }
 
-export default photos;
+export default Photos;

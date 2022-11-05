@@ -1,32 +1,41 @@
-import React, { useContext, useEffect, useMemo, useState } from "react";
+import React, { useContext } from "react";
 import Image from "next/image";
 import { MdFileDownload } from "react-icons/md";
 import UserProfileThumbnail from "./UserProfileThumbnail";
 import PhotosContext from "./Context/PhotosContext";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 function Cards(props) {
   const context = useContext(PhotosContext);
-  const img = props.imageData.urls.regular;
-  const id = props.imageData.id;
-  const userName = props.imageData.user.name;
-  const userId = props.imageData.user.username;
-  const userImg = props.imageData.user.profile_image.small;
-  const bgColor = props.imageData.color;
-  const downloadUrls = props.imageData.links.download;
-  const alt_description = props.imageData.alt_description
+
+  const {
+    id,
+    likes,
+    user: { username },
+    user: { name },
+    urls: { regular: image },
+    user: {
+      profile_image: { small },
+    },
+    color,
+    links: { download: downloadUrls },
+    alt_description,
+    ...a
+  } = props.imageData;
+
+  const router = useRouter();
   return (
     <div className={`group w-full h-auto relative hover:bg-black/10`} id={id}>
-      <div
+      <Link
+      href={`/photos/${id}`}
+      target="_top"
         className="w-full h-auto relative cursor-zoom-in"
-        style={{ background: bgColor }}
-        onClick={() => {
-          context.setIsPreviewActive(props.imageData);
-        }}
+        style={{ background: color }}
       >
         <Image
-          alt={alt_description===null?"Photo by"+userName:alt_description}
-          src={img}
-          // fill
+          alt={alt_description === null ? "Photo by" + name : alt_description}
+          src={image}
           width={500}
           height={500}
           className="w-full h-auto object-cover"
@@ -34,20 +43,19 @@ function Cards(props) {
         (max-width: 1200px) 50vw,
         33vw"
         />
-      </div>
+      </Link>
 
       <article className="w-full sm:h-full flex flex-col justify-between sm:opacity-0 pb-5 sm:p-0 sm:absolute top-0 left-0 hover:opacity-100 sm:card">
-        <div
+        <Link
+          href={`/photos/${id}`}
+          target="_top"
           className="w-full h-full cursor-zoom-in"
-          onClick={() => {
-            context.setIsPreviewActive(props.imageData);
-          }}
-        ></div>
+        ></Link>
         <div className="flex p-3 justify-between">
           <UserProfileThumbnail
-            img={userImg}
-            userName={userName}
-            userId={userId}
+            img={small}
+            userName={name}
+            userId={username}
             styles={"sm:text-white"}
           />
           <a
