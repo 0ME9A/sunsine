@@ -19,7 +19,7 @@ function ShareDialogbox(props) {
 
         <div className="flex gap-2 mt-3">
           <Link
-            href={`https://twitter.com/intent/tweet?url=https://camcapture.netlify.app/creators/@${userid}?utm_source=twitter&utm_medium=referral`}
+            href={`https://twitter.com/intent/tweet?url=https://sunsine.netlify.app/creators/@${userid}?utm_source=twitter&utm_medium=referral`}
             target="_blank"
             className="w-full flex gap-2 items-center justify-center bg-gray-100 p-1 hover:bg-white"
             aria-label={`share ${""}'s profile in Twitter.`}
@@ -29,7 +29,7 @@ function ShareDialogbox(props) {
             Twitter
           </Link>
           <Link
-            href={`https://www.facebook.com/sharer/sharer.php?u=https://camcapture.netlify.app/creators/@${userid}?utm_source=facebook&utm_medium=referral`}
+            href={`https://www.facebook.com/sharer/sharer.php?u=https://sunsine.netlify.app/creators/@${userid}?utm_source=facebook&utm_medium=referral`}
             target="_blank"
             className="w-full flex gap-2 items-center justify-center bg-gray-100 p-1 hover:bg-white"
             aria-label={`share ${""}'s profile in facebook.`}
@@ -39,7 +39,7 @@ function ShareDialogbox(props) {
             Facebook
           </Link>
           <Link
-            href={`mailto:?body=https://camcapture.netlify.app/cretors/@${userid}?utm_source=email&utm_medium=referral`}
+            href={`mailto:?body=https://sunsine.netlify.app/cretors/@${userid}?utm_source=email&utm_medium=referral`}
             target="_blank"
             className="w-full flex gap-2 items-center justify-center bg-gray-100 p-1 hover:bg-white"
             aria-label={`share ${""}'s profile in Instagram.`}
@@ -50,7 +50,7 @@ function ShareDialogbox(props) {
           </Link>
         </div>
         <p className="w-full flex items-center justify-between bg-gray-100 overflow-auto border-2 rounded-sm p-1 px-3 mt-2">
-          https://camcapture.netlify.app/creators/@{userid}
+          https://sunsine.netlify.app/creators/@{userid}
           <span className="hidden">
             <MdOutlineFileCopy />
           </span>

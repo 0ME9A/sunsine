@@ -12,7 +12,7 @@ function Navbar(props) {
     <div className="sticky top-0 w-full z-50 backdrop-blur-lg bg-white text-black">
       <nav className=" flex justify-between p-3 items-center ">
         <Link href="/">
-          <h2 className="text-xl ">camCapture</h2>
+          <h2 className="text-xl ">Sunsine</h2>
         </Link>
 
         <ul className="gap-6 lg:gap-7 items-center  hidden lg:flex">

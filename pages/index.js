@@ -15,7 +15,7 @@ export default function Home({ result }) {
         />
         <div className="w-full h-full absolute card opacity-75"></div>
         <article className="absolute w-full p-5  md:max-w-3xl left-1/2 top-1/2 -translate-x-1/2">
-          <h1 className="text-white">camCapture</h1>
+          <h1 className="text-white">Sunsine</h1>
           <p className="text-white">
             The internet’s source for visuals. Powered by creators everywhere.
           </p>
