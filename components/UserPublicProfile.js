@@ -29,7 +29,7 @@ function UserPublicProfile(props) {
   return (
     <>
       <div className="p-5 px-3 mt-10 flex-col mx-auto max-w-screen-lg md:flex-row flex 0 md:gap-8 relative justify-start items-start">
-        <div className="w-40 aspect-square relative">
+        <div className="w-40 min-w-[150px] aspect-square relative">
           <Image
             src={large}
             width={150}
@@ -55,7 +55,6 @@ function UserPublicProfile(props) {
             </p>
             {location && (
               <address className="flex gap-1 items-center">
-                {/* <GrLocation className="text-lg" />{" "} */}
                 <span className="font-normal not-italic ">
                   Location - {location}
                 </span>

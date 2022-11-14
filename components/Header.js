@@ -9,7 +9,7 @@ function Header(props) {
     <>
       <Navbar menuState={menuToggle} setMenuState={setMenuToggle} />
       <div className="relative">
-        <Menu menuState={menuToggle} />
+        <Menu menuState={menuToggle} setMenuState={setMenuToggle}/>
       </div>
     </>
   );

@@ -28,16 +28,16 @@ function Cards(props) {
   return (
     <div className={`group w-full h-auto relative hover:bg-black/10`} id={id}>
       <Link
-      href={`/photos/${id}`}
-      target="_top"
+        href={`/photos/${id}`}
+        target="_top"
         className="w-full h-auto relative cursor-zoom-in"
-        style={{ background: color }}
       >
         <Image
           alt={alt_description === null ? "Photo by" + name : alt_description}
           src={image}
           width={500}
           height={500}
+          style={{ background: color }}
           className="w-full h-auto object-cover"
           sizes="(max-width: 768px) 100vw,
         (max-width: 1200px) 50vw,

@@ -1,14 +1,10 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import PhotosContext from "./Context/PhotosContext";
-
 
 function UserProfileThumbnail(props) {
-  const context = useContext(PhotosContext)
-
   return (
-    <Link href={`/creators/@${encodeURIComponent(props.userId)}`} onClick={()=>context.setIsPreviewActive('')}>
+    <Link href={`/creators/@${encodeURIComponent(props.userId)}`}>
       <figure
         className={`flex items-center gap-3 ${props.styles} relative cursor-pointer bg-transparent`}
       >

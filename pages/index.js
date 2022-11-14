@@ -1,10 +1,15 @@
+import Head from "next/head";
 import Image from "next/image";
 import Layout from "../components/Layout";
 import PhotosList from "../components/PhotosList";
+import PhotosList_II from "../components/PhotosList_II";
 
 export default function Home({ result }) {
   return (
     <>
+    <Head>
+      <title>Beautiful free images and pictures | Sunsine</title>
+    </Head>
       <div className="h-96 lg:h-[60vh] w-full bg-black overflow-hidden relative top-0">
         <Image
           alt="The guitarist in the concert."
@@ -22,7 +27,7 @@ export default function Home({ result }) {
           <hr />
         </article>
       </div>
-      <PhotosList title="false"/>
+      <PhotosList_II title={null} query={null} type={null}/>
     </>
   );
 }

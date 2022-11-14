@@ -20,7 +20,7 @@ function Layout({ children }) {
       }}
     >
       <Head>
-        <title>Project Next</title>
+        <title>Beautiful free images and pictures | Sunsine</title>
       </Head>
 
       <Header />

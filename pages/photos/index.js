@@ -1,8 +1,23 @@
-import React from "react";
-import PhotosList from "../../components/PhotosList";
+import React, {useState, useEffect} from 'react';
+import PhotosList_II from '../../components/PhotosList_II';
+import{ useRouter } from 'next/router';
+import Loading from '../../components/Loading';
 
-function Photos(props) {
-  return <PhotosList title={true}/>;
+function Index(props) {
+  const router = useRouter()
+  const [search, setSearch] = useState(false)
+  // console.log(router.query.search)
+
+  useEffect(()=>{
+    setSearch(router.query.search)
+  }, [router.isReady])
+
+  if (router.isReady) {
+    return <PhotosList_II  type={"search"} title={search} query={router.query.search}/>    
+  }else{
+    return <Loading/>
+  }
+
 }
 
-export default Photos;
+export default Index;

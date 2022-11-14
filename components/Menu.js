@@ -36,23 +36,65 @@ function Menu(props) {
         </p>
         <ul className="flex flex-col gap-8 mt-16 text-black text-xl max-w-screen-2xl mx-auto">
           <li>
-            <Link href="/">Home</Link>
+            <Link
+              href="/"
+              onClick={() => {
+                props.setMenuState(0);
+              }}
+            >
+              Home
+            </Link>
           </li>
           {/* <li>
             <Link href="/creators/">Creators</Link>
           </li> */}
           <li>
-            <Link href="/">About</Link>
+            <Link
+              href="/"
+              onClick={() => {
+                props.setMenuState(0);
+              }}
+            >
+              About
+            </Link>
           </li>
           <li>
-            <Link href="/">Contact us</Link>
+            <Link
+              href="/"
+              onClick={() => {
+                props.setMenuState(0);
+              }}
+            >
+              Contact us
+            </Link>
           </li>
         </ul>
         <div className="social absolute bottom-10">
           <div className="bg-white flex gap-5 py-5 text-2xl shadow-md w-full max-w-screen-2xl mx-auto rounded-xl p-3 text-black font-normal normal-case">
-            <FaLinkedin className="hover:scale-110 transition-all cursor-pointer" />
-            <FaTwitter className="hover:scale-110 transition-all cursor-pointer" />
-            <FaGithub className="hover:scale-110 transition-all cursor-pointer" />
+            <Link
+              href={"https://www.linkedin.com/in/baliram-kumar-0a9a0a214/"}
+              target="_blank"
+              rel="linked link"
+              aria-label="linkedin profile open new tab"
+            >
+              <FaLinkedin className="hover:scale-110 transition-all cursor-pointer" />
+            </Link>
+            <Link
+              href={"https://twitter.com/omega86735940"}
+              target="_blank"
+              rel="twitter link"
+              aria-label="twitter profile open new tab"
+            >
+              <FaTwitter className="hover:scale-110 transition-all cursor-pointer" />
+            </Link>
+            <Link
+              href={"https://github.com/0me9a"}
+              target="_blank"
+              rel="github link"
+              aria-label="github profile open new tab"
+            >
+              <FaGithub className="hover:scale-110 transition-all cursor-pointer" />
+            </Link>
           </div>
         </div>
       </div>

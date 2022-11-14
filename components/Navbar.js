@@ -44,6 +44,9 @@ function Navbar(props) {
             <Link
               href="https://github.com/0me9a"
               className="border-2 inline-block p-1 rounded-full border-black hover:bg-black group"
+              target={"_blank"}
+              rel="github link"
+              aria-label="go to github profile new tab"
             >
               <FiGithub className="text-xl group-hover:text-white" />
             </Link>
